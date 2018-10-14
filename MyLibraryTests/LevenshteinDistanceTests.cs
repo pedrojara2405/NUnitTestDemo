@@ -22,5 +22,21 @@ namespace MyLibraryTests
             //Assert
             Assert.AreEqual(ExpectedResult, result);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void NullAdnCamarin_ShouldThrowException()
+        {
+            //Arrange
+            string cadena1 = null;
+            var cadena2 = "camarin";
+            LevenshteinDistance calculator = new LevenshteinDistance();
+
+            //Act
+            calculator.Compute(cadena1, cadena2);
+
+            //Assert
+            
+        }
     }
 }
